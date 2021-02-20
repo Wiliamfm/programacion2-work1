@@ -39,8 +39,65 @@ public class Pet {
      */
     @Override
     public String toString() {
-        return "id: " + id + " microchip: " + microchip + " species: " + species + " sex: " + sex + " size: " + size
-                + " potentDangerous: " + potentDangerous + " neigborhood:" + neighborhood;
+        return "id: " + id + "\nspecies: " + species + "\nsex: " + sex + "\nsize: " + size + "\npotentDangerous: "
+                + potentDangerous + "\nneigborhood:" + neighborhood;
+    }
+
+    // gets and sets methods.
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setMicrochip(long microchip) {
+        this.microchip = microchip;
+    }
+
+    public long getMicrochip() {
+        return microchip;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setPotentDangerous(boolean potentDangerous) {
+        this.potentDangerous = potentDangerous;
+    }
+
+    public boolean getPotentDangerous() {
+        return potentDangerous;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public String getSpecies() {
+        return species;
     }
 
 }
