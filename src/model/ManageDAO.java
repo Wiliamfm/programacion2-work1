@@ -78,16 +78,22 @@ public class ManageDAO {
    */
   private String setID(Pet pet, int index) {
     String aux = Long.toString(pet.getMicrochip());
+    int a = index;
     String id = "";
-    for (int i = aux.length() - 1; i >= 0; i--) {
-      id.concat(String.valueOf(aux.charAt(i)));
-      index -= 1;
-      if (index == 0) {
+    for (int i = 1; i <= aux.length(); i++) {
+      id = String.valueOf(aux.charAt(aux.length() - i)) + id;
+      a -= 1;
+      if (a == 0) {
         break;
       }
     }
-    id.concat("-" + pet.getSpecies().charAt(0) + pet.getSex().charAt(0) + pet.getSize()
-        + getBooleanValue(pet.getPotentDangerous()) + "-" + pet.getNeighborhood());
+    if (pet.getSize().equalsIgnoreCase("MINIATURA")) {
+      id = id.concat("-" + pet.getSpecies().charAt(0) + pet.getSex().charAt(0) + pet.getSize().charAt(0)
+          + pet.getSize().charAt(1) + getBooleanValue(pet.getPotentDangerous()) + "-" + pet.getNeighborhood());
+    } else {
+      id = id.concat("-" + pet.getSpecies().charAt(0) + pet.getSex().charAt(0) + pet.getSize().charAt(0)
+          + getBooleanValue(pet.getPotentDangerous()) + "-" + pet.getNeighborhood());
+    }
     if (searchID(id)) {
       return setID(pet, index + 1);
     } else {
@@ -197,7 +203,7 @@ public class ManageDAO {
           }
           break;
         case "LAST":
-          for (int i = petsList.size() - 1; i >= 0; i++) {
+          for (int i = (petsList.size() - 1); i >= 0; i--) {
             if (nh.equalsIgnoreCase(petsList.get(i).getNeighborhood()) && n > 0) {
               pets.add(petsList.get(i));
               n--;
@@ -215,19 +221,22 @@ public class ManageDAO {
     }
   }
 
-  public String[] findByMultipleFields(String sex, String species, String size, String potentDangerous) {
+  public String[] findByMultipleFields(String species, String sex, String size, String potentDangerous) {
     if (b) {
       boolean pd = convertToBoolean(potentDangerous);
       ArrayList<Pet> pets = new ArrayList<Pet>();
       for (int i = 0; i < petsList.size(); i++) {
-        if (sex.equalsIgnoreCase(petsList.get(i).getSex()) && species.equalsIgnoreCase(petsList.get(i).getSpecies())
+        System.out.println(
+            species.equalsIgnoreCase(petsList.get(i).getSpecies()) && sex.equalsIgnoreCase(petsList.get(i).getSex())
+                && pd == petsList.get(i).getPotentDangerous() && size.equalsIgnoreCase(petsList.get(i).getSize()));
+        if (species.equalsIgnoreCase(petsList.get(i).getSpecies()) && sex.equalsIgnoreCase(petsList.get(i).getSex())
             && size.equalsIgnoreCase(petsList.get(i).getSize()) && pd == petsList.get(i).getPotentDangerous()) {
           pets.add(petsList.get(i));
         }
       }
       String[] lPets = new String[pets.size()];
       for (int i = 0; i < lPets.length; i++) {
-        lPets[i] = pets.get(i).toString();
+        lPets[i] = pets.get(i).getId();
       }
       return lPets;
     } else {

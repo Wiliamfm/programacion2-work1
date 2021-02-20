@@ -39,8 +39,8 @@ public class Pet {
      */
     @Override
     public String toString() {
-        return "id: " + id + "\nspecies: " + species + "\nsex: " + sex + "\nsize: " + size + "\npotentDangerous: "
-                + potentDangerous + "\nneigborhood:" + neighborhood;
+        return "ID: " + id + "\nSpecies: " + species + "\nGender: " + sex + "\nSize: " + size
+                + "\nPotentially Dangerous: " + potentDangerous + "\nNeigborhood:" + neighborhood;
     }
 
     // gets and sets methods.

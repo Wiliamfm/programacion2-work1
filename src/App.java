@@ -26,7 +26,7 @@ public class App {
                     break;
                 case "REQ2":
                     if (m.assignID(m.getPetsList())) {
-                        System.out.println("El proceso de asignación de ids ha finalizado");
+                        System.out.println("El proceso de asignación de IDs ha finalizado");
                     } else {
                         System.out.println("Error during assign IDs");
                     }
@@ -34,7 +34,7 @@ public class App {
                 case "REQ3":
                     System.out.println("Enter the pet´s microship: ");
                     long ms = Long.parseLong(sc.nextLine());
-                    m.findByMicroship(ms);
+                    System.out.println(m.findByMicroship(ms).toString());
                     break;
                 case "REQ4":
                     System.out.println("Enter the specie to search: ");
@@ -55,22 +55,26 @@ public class App {
                     }
                     break;
                 case "REQ6":
-                    System.out.println("Enter the sex: ");
-                    String sex = sc.nextLine();
                     System.out.println("Enter the Species:");
                     String species = sc.nextLine();
+                    System.out.println("Enter the sex: ");
+                    String sex = sc.nextLine();
                     System.out.println("Enter the Size:");
                     String size = sc.nextLine();
                     System.out.println("Enter the Dangerous:");
                     String potentDangerous = sc.nextLine();
-                    String[] pets2 = m.findByMultipleFields(sex, species, size, potentDangerous);
+                    String[] pets2 = m.findByMultipleFields(species, sex, size, potentDangerous);
                     for (int i = 0; i < pets2.length; i++) {
-                        System.out.println(pets2[1]);
+                        System.out.println(pets2[i]);
                     }
                     break;
             }
             System.out.println("Do you want to exit the program? \n1.Yes. \t2.No.");
-            out = Integer.parseInt(sc.nextLine());
+            try {
+                out = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                out = 1;
+            }
         }
     }
 }
