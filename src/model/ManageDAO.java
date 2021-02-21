@@ -226,9 +226,6 @@ public class ManageDAO {
       boolean pd = convertToBoolean(potentDangerous);
       ArrayList<Pet> pets = new ArrayList<Pet>();
       for (int i = 0; i < petsList.size(); i++) {
-        System.out.println(
-            species.equalsIgnoreCase(petsList.get(i).getSpecies()) && sex.equalsIgnoreCase(petsList.get(i).getSex())
-                && pd == petsList.get(i).getPotentDangerous() && size.equalsIgnoreCase(petsList.get(i).getSize()));
         if (species.equalsIgnoreCase(petsList.get(i).getSpecies()) && sex.equalsIgnoreCase(petsList.get(i).getSex())
             && size.equalsIgnoreCase(petsList.get(i).getSize()) && pd == petsList.get(i).getPotentDangerous()) {
           pets.add(petsList.get(i));

@@ -8,7 +8,7 @@ public class App {
     private static ManageDAO m;
 
     public static void main(String[] args) throws Exception {
-        sc = new Scanner(System.in);
+        sc = new Scanner(System.in, "ISO-8859-1");
         m = new ManageDAO();
         int out = 2;
         while (out == 2) {
