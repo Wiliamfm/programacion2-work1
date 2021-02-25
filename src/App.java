@@ -26,13 +26,13 @@ public class App {
                         break;
                     case "REQ2":
                         if (m.assignID(m.getPetsList())) {
-                            System.out.println("El proceso de asignaciÃ³n de IDs ha finalizado");
+                            System.out.println("El proceso de asignación de IDs ha finalizado");
                         } else {
                             System.out.println("Error during assign IDs");
                         }
                         break;
                     case "REQ3":
-                        System.out.println("Enter the petÂ´s microship: ");
+                        System.out.println("Enter the pet´s microship: ");
                         long ms = Long.parseLong(sc.nextLine());
                         System.out.println(m.findByMicroship(ms).toString());
                         break;

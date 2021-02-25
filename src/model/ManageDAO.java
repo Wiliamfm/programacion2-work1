@@ -17,7 +17,7 @@ public class ManageDAO {
   private boolean b = false;
 
   public ManageDAO() {
-    this.file = new File(".\\data\\pets-citizens.csv");
+    this.file = new File("./data/pets-citizens.csv");
   }
 
   /**
