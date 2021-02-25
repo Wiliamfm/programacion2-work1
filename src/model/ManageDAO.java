@@ -17,8 +17,7 @@ public class ManageDAO {
   private boolean b = false;
 
   public ManageDAO() {
-    this.file = new File(
-        "C:\\Users\\Santi\\OneDrive\\Documentos\\Trabajos\\UBosque\\Programacion 2\\work 1\\data\\pets-citizens.csv");
+    this.file = new File(".\\data\\pets-citizens.csv");
   }
 
   /**
