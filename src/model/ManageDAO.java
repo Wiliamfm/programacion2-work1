@@ -17,7 +17,8 @@ public class ManageDAO {
   private boolean b = false;
 
   public ManageDAO() {
-    this.file = new File(".\\data\\pets-citizens.csv");
+    this.file = new File(
+        "C:\\Users\\Santi\\OneDrive\\Documentos\\Trabajos\\UBosque\\Programacion 2\\work 1\\data\\pets-citizens.csv");
   }
 
   /**
@@ -42,12 +43,13 @@ public class ManageDAO {
             petsList.add(auxP);
           }
         } catch (NumberFormatException e) {
-          // TODO: handle exception
+
         }
       }
       b = true;
       return true;
     } catch (IOException e) {
+      System.out.println(e.getMessage());
       return false;
     }
   }
