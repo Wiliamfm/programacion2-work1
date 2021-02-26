@@ -40,7 +40,7 @@ public class App {
                         System.out.println("Enter the specie to search: ");
                         String specie = sc.nextLine();
                         System.out.println(
-                                "El nÃºmero de animales de la especie " + specie + " es: " + m.countBySpecies(specie));
+                                "El número de animales de la especie " + specie + " es: " + m.countBySpecies(specie));
                         break;
                     case "REQ5":
                         System.out.println("Enter the index: ");
