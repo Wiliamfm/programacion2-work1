@@ -14,25 +14,25 @@ public class App {
         while (out == 2) {
             try {
                 System.out.println(
-                        "Enter a request: \n1: Upload data. \n2: Assign ID. \n3: Find by microship. \n4: Count by species. \n5: Find dangerous pets in a specific neighborhood.  \n6: Find by multiple fields.");
+                        "Enter a request: \n1: Upload data. \n2: Assign ID. \n3: Find by microchip. \n4: Count by species. \n5: Find dangerous pets in a specific neighborhood.  \n6: Find by multiple fields.  \n7: Exit the program.");
                 String option = sc.nextLine();
                 switch (option) {
                     case "1":
                         if (m.uploadData()) {
-                            System.out.println("El proceso de carga del archivo ha finalizado");
+                            System.out.println("El proceso de carga del archivo ha finalizado.");
                         } else {
                             System.out.println("Error during the files upload");
                         }
                         break;
                     case "2":
                         if (m.assignID(m.getPetsList())) {
-                            System.out.println("El proceso de asignación de IDs ha finalizado");
+                            System.out.println("El proceso de asignación de IDs ha finalizado.");
                         } else {
                             System.out.println("Error during assign IDs");
                         }
                         break;
                     case "3":
-                        System.out.println("Enter the pet´s microship: ");
+                        System.out.println("Enter the pet´s microchip: ");
                         long ms = Long.parseLong(sc.nextLine());
                         System.out.println(m.findByMicroship(ms).toString());
                         break;
@@ -55,13 +55,13 @@ public class App {
                         }
                         break;
                     case "6":
-                        System.out.println("Enter the Species:");
+                        System.out.println("Enter the species:");
                         String species = sc.nextLine();
                         System.out.println("Enter the sex: ");
                         String sex = sc.nextLine();
-                        System.out.println("Enter the Size:");
+                        System.out.println("Enter the size:");
                         String size = sc.nextLine();
-                        System.out.println("Enter the Dangerous:");
+                        System.out.println("Enter the dangerous:");
                         String potentDangerous = sc.nextLine();
                         System.out.println(size);
                         String[] pets2 = m.findByMultipleFields(species, sex, size, potentDangerous);
@@ -69,6 +69,9 @@ public class App {
                             System.out.println(pets2[i]);
                         }
                         break;
+                    case "7":
+                    	System.out.println("Exit the program.");
+                    	break;
                 }
             } catch (Exception e) {
                 System.out.println("Error in input.");

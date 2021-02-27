@@ -23,7 +23,7 @@ public class ManageDAO {
   /**
    * Upload the pets register file.
    * 
-   * @return True if the upload was successfull; False if wasnÂ´t.
+   * @return True if the upload was successfull; False if it wasn´t.
    */
   public boolean uploadData() {
     try {
