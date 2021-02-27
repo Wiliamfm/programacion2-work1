@@ -14,35 +14,35 @@ public class App {
         while (out == 2) {
             try {
                 System.out.println(
-                        "Enter a requst: \nREQ1: Upload data. \nREQ2: Assign ID. \nREQ3: Find by microship. \nREQ4: Count by species. \nREQ5: Find dangerous pets in a specific neighborhood.  \nREQ6: Find by multiple fields.");
+                        "Enter a request: \n1: Upload data. \n2: Assign ID. \n3: Find by microship. \n4: Count by species. \n5: Find dangerous pets in a specific neighborhood.  \n6: Find by multiple fields.");
                 String option = sc.nextLine();
                 switch (option) {
-                    case "REQ1":
+                    case "1":
                         if (m.uploadData()) {
                             System.out.println("El proceso de carga del archivo ha finalizado");
                         } else {
                             System.out.println("Error during the files upload");
                         }
                         break;
-                    case "REQ2":
+                    case "2":
                         if (m.assignID(m.getPetsList())) {
                             System.out.println("El proceso de asignación de IDs ha finalizado");
                         } else {
                             System.out.println("Error during assign IDs");
                         }
                         break;
-                    case "REQ3":
+                    case "3":
                         System.out.println("Enter the pet´s microship: ");
                         long ms = Long.parseLong(sc.nextLine());
                         System.out.println(m.findByMicroship(ms).toString());
                         break;
-                    case "REQ4":
+                    case "4":
                         System.out.println("Enter the specie to search: ");
                         String specie = sc.nextLine();
                         System.out.println(
                                 "El número de animales de la especie " + specie + " es: " + m.countBySpecies(specie));
                         break;
-                    case "REQ5":
+                    case "5":
                         System.out.println("Enter the index: ");
                         int n = Integer.parseInt(sc.nextLine());
                         System.out.println("Enter the TOP or LAST parameter:");
@@ -54,7 +54,7 @@ public class App {
                             System.out.println(pets[i]);
                         }
                         break;
-                    case "REQ6":
+                    case "6":
                         System.out.println("Enter the Species:");
                         String species = sc.nextLine();
                         System.out.println("Enter the sex: ");
@@ -73,7 +73,7 @@ public class App {
             } catch (Exception e) {
                 System.out.println("Error in input.");
             }
-            System.out.println("Do you want to exit the program? \n1.Yes. \t2.No.");
+            System.out.println("¿Do you want to exit the program? \n1. Yes. \t2. No.");
             try {
                 out = Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
