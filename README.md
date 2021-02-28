@@ -1,6 +1,7 @@
 ## Members
 
 - William Fonseca
+- Sergio Valderrama
 - Use Vs Code.
 - Url: https://github.com/Wiliamfm/programacion2-work1
 
