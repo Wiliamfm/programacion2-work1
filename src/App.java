@@ -63,15 +63,14 @@ public class App {
                         String size = sc.nextLine();
                         System.out.println("Enter the dangerous:");
                         String potentDangerous = sc.nextLine();
-                        System.out.println(size);
                         String[] pets2 = m.findByMultipleFields(species, sex, size, potentDangerous);
                         for (int i = 0; i < pets2.length; i++) {
                             System.out.println(pets2[i]);
                         }
                         break;
                     case "7":
-                    	System.out.println("Exit the program.");
-                    	break;
+                        System.out.println("Exit the program.");
+                        break;
                 }
             } catch (Exception e) {
                 System.out.println("Error in input.");
